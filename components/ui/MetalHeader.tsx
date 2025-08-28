@@ -1,21 +1,36 @@
-import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
 import { LinearGradient } from 'expo-linear-gradient';
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, ViewStyle } from 'react-native';
 
-interface TabBarBackgroundProps {
+interface MetalHeaderProps {
   isDark?: boolean;
+  children: React.ReactNode;
+  style?: ViewStyle;
 }
 
-export default function TabBarBackground({ isDark = false }: TabBarBackgroundProps) {
+export default function MetalHeader({ isDark = false, children, style }: MetalHeaderProps) {
   if (isDark) {
-    return <BrushedMetalTabBarBackground />;
+    return (
+      <View style={[styles.container, style]}>
+        <BrushedMetalHeaderBackground />
+        <View style={styles.content}>
+          {children}
+        </View>
+      </View>
+    );
   }
   
-  return <AluminiumMetalTabBarBackground />;
+  return (
+    <View style={[styles.container, style]}>
+      <AluminiumMetalHeaderBackground />
+      <View style={styles.content}>
+        {children}
+      </View>
+    </View>
+  );
 }
 
-function BrushedMetalTabBarBackground() {
+function BrushedMetalHeaderBackground() {
   return (
     <View style={StyleSheet.absoluteFill}>
       {/* Base diagonal brushed metal gradient - increased contrast with darker base */}
@@ -61,7 +76,7 @@ function BrushedMetalTabBarBackground() {
   );
 }
 
-function AluminiumMetalTabBarBackground() {
+function AluminiumMetalHeaderBackground() {
   return (
     <View style={StyleSheet.absoluteFill}>
       {/* Enhanced base aluminium gradient - more pronounced metallic silver */}
@@ -123,6 +138,14 @@ function AluminiumMetalTabBarBackground() {
   );
 }
 
-export function useBottomTabOverflow() {
-  return useBottomTabBarHeight();
-}
+const styles = StyleSheet.create({
+  container: {
+    position: 'relative',
+    overflow: 'hidden',
+  },
+  content: {
+    position: 'relative',
+    zIndex: 1,
+    width: '100%',
+  },
+});

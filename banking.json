@@ -1,0 +1,2609 @@
+{
+  "institution": {
+    "name": "Revolut (Demo)",
+    "country": "GB"
+  },
+  "account": {
+    "account_id": "acc_uk_revolut_demo_001",
+    "official_name": "Revolut Current Account",
+    "mask": "1234",
+    "iban_last4": "82AB",
+    "sort_code": "04-00-04",
+    "account_number_mask": "****5678",
+    "type": "depository",
+    "subtype": "checking",
+    "balances": {
+      "available": 1262.74,
+      "current": 1262.74,
+      "limit": null,
+      "iso_currency_code": "GBP"
+    }
+  },
+  "period": {
+    "month": 7,
+    "year": 2025,
+    "start_date": "2025-07-01",
+    "end_date": "2025-07-31",
+    "opening_balance": 350.0,
+    "closing_balance": 1262.74,
+    "currency": "GBP"
+  },
+  "categories": {
+    "income": {
+      "id": "10000000",
+      "name": "Income"
+    },
+    "groceries": {
+      "id": "10000001",
+      "name": "Groceries"
+    },
+    "eating_out": {
+      "id": "10000002",
+      "name": "Eating Out"
+    },
+    "transport": {
+      "id": "10000003",
+      "name": "Transport"
+    },
+    "entertainment": {
+      "id": "10000004",
+      "name": "Entertainment"
+    },
+    "bills_utilities": {
+      "id": "10000005",
+      "name": "Bills & Utilities"
+    }
+  },
+  "transactions": [
+    {
+      "transaction_id": "40177155-aa28-4ebf-9215-6c94839dc30c",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 1030.01,
+      "direction": "credit",
+      "date": "2025-07-01",
+      "authorized_date": "2025-07-01",
+      "name": "Imperial Research Stipend",
+      "merchant_name": "Imperial Research Stipend",
+      "payment_channel": "online",
+      "category": [
+        "Income"
+      ],
+      "category_id": "10000000",
+      "pending": false,
+      "transaction_type": "digital",
+      "transaction_code": null,
+      "location": {
+        "address": null,
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Imperial Research Stipend",
+        "payer": "Imperial Research Stipend",
+        "payment_method": "bank_transfer",
+        "payment_processor": "FasterPayments",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Imperial Research Stipend",
+          "type": "employer",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 1380.01
+    },
+    {
+      "transaction_id": "5523217f-2804-406c-bb83-3b49b9008eba",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 26.57,
+      "direction": "debit",
+      "date": "2025-07-01",
+      "authorized_date": "2025-07-01",
+      "name": "Nando's",
+      "merchant_name": "Nando's",
+      "payment_channel": "in_store",
+      "category": [
+        "Eating Out"
+      ],
+      "category_id": "10000002",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Nando's",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Nando's",
+          "type": "merchant",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 1353.44
+    },
+    {
+      "transaction_id": "c5caa884-3cce-4351-8120-05b013f4c9a1",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 12.4,
+      "direction": "debit",
+      "date": "2025-07-02",
+      "authorized_date": "2025-07-02",
+      "name": "Tesco Express",
+      "merchant_name": "Tesco Express",
+      "payment_channel": "in_store",
+      "category": [
+        "Groceries"
+      ],
+      "category_id": "10000001",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Tesco Express",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Tesco Express",
+          "type": "merchant",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 1341.04
+    },
+    {
+      "transaction_id": "713468d0-096a-48ca-8729-bb48a243a80d",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 17.35,
+      "direction": "debit",
+      "date": "2025-07-03",
+      "authorized_date": "2025-07-03",
+      "name": "Waitrose",
+      "merchant_name": "Waitrose",
+      "payment_channel": "online",
+      "category": [
+        "Groceries"
+      ],
+      "category_id": "10000001",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Waitrose",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Waitrose",
+          "type": "merchant",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 1323.69
+    },
+    {
+      "transaction_id": "9ab6df75-ccc1-4274-a8d5-5536c000a89d",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 30.96,
+      "direction": "debit",
+      "date": "2025-07-04",
+      "authorized_date": "2025-07-04",
+      "name": "TfL Travel",
+      "merchant_name": "TfL Travel",
+      "payment_channel": "in_store",
+      "category": [
+        "Transport"
+      ],
+      "category_id": "10000003",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "TfL Travel",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "TfL Travel",
+          "type": "merchant",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 1292.73
+    },
+    {
+      "transaction_id": "468b5605-4312-418b-b2cf-72de67ab6926",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 10.99,
+      "direction": "debit",
+      "date": "2025-07-05",
+      "authorized_date": "2025-07-05",
+      "name": "Netflix",
+      "merchant_name": "Netflix",
+      "payment_channel": "online",
+      "category": [
+        "Entertainment"
+      ],
+      "category_id": "10000004",
+      "pending": false,
+      "transaction_type": "digital",
+      "transaction_code": null,
+      "location": {
+        "address": null,
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Netflix",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Netflix",
+          "type": "subscription",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 1281.74
+    },
+    {
+      "transaction_id": "1af022c0-5983-4a28-9d9a-9870383d5dff",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 8.33,
+      "direction": "debit",
+      "date": "2025-07-05",
+      "authorized_date": "2025-07-05",
+      "name": "Trainline",
+      "merchant_name": "Trainline",
+      "payment_channel": "online",
+      "category": [
+        "Transport"
+      ],
+      "category_id": "10000003",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Trainline",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Trainline",
+          "type": "merchant",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 1273.41
+    },
+    {
+      "transaction_id": "dca2a33c-5272-4ef0-a0d4-9a8021454a73",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 25.86,
+      "direction": "debit",
+      "date": "2025-07-05",
+      "authorized_date": "2025-07-05",
+      "name": "Tesco Express",
+      "merchant_name": "Tesco Express",
+      "payment_channel": "online",
+      "category": [
+        "Groceries"
+      ],
+      "category_id": "10000001",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Tesco Express",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Tesco Express",
+          "type": "merchant",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 1247.55
+    },
+    {
+      "transaction_id": "bd26f665-7ed1-4ec6-a8c1-f77bb1700793",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 29.86,
+      "direction": "debit",
+      "date": "2025-07-06",
+      "authorized_date": "2025-07-06",
+      "name": "TfL Travel",
+      "merchant_name": "TfL Travel",
+      "payment_channel": "in_store",
+      "category": [
+        "Transport"
+      ],
+      "category_id": "10000003",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "TfL Travel",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "TfL Travel",
+          "type": "merchant",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 1217.69
+    },
+    {
+      "transaction_id": "9cd72d78-3266-4ea4-9b5b-e5e249dbe4b0",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 35.36,
+      "direction": "debit",
+      "date": "2025-07-06",
+      "authorized_date": "2025-07-06",
+      "name": "Netflix",
+      "merchant_name": "Netflix",
+      "payment_channel": "online",
+      "category": [
+        "Entertainment"
+      ],
+      "category_id": "10000004",
+      "pending": false,
+      "transaction_type": "digital",
+      "transaction_code": null,
+      "location": {
+        "address": null,
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Netflix",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Netflix",
+          "type": "subscription",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 1182.33
+    },
+    {
+      "transaction_id": "fd927214-0059-4912-8e2c-d2ee8bd74494",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 28.92,
+      "direction": "debit",
+      "date": "2025-07-07",
+      "authorized_date": "2025-07-07",
+      "name": "Uber",
+      "merchant_name": "Uber",
+      "payment_channel": "in_store",
+      "category": [
+        "Transport"
+      ],
+      "category_id": "10000003",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Uber",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Uber",
+          "type": "merchant",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 1153.41
+    },
+    {
+      "transaction_id": "339e0d0d-ebfd-415b-b139-e48641d68914",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 34.53,
+      "direction": "debit",
+      "date": "2025-07-07",
+      "authorized_date": "2025-07-07",
+      "name": "Franco Manca",
+      "merchant_name": "Franco Manca",
+      "payment_channel": "in_store",
+      "category": [
+        "Eating Out"
+      ],
+      "category_id": "10000002",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Franco Manca",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Franco Manca",
+          "type": "merchant",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 1118.88
+    },
+    {
+      "transaction_id": "4f8698db-3273-407d-9f97-539967b957d2",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 29.93,
+      "direction": "debit",
+      "date": "2025-07-08",
+      "authorized_date": "2025-07-08",
+      "name": "Apple Services",
+      "merchant_name": "Apple Services",
+      "payment_channel": "online",
+      "category": [
+        "Entertainment"
+      ],
+      "category_id": "10000004",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Apple Services",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Apple Services",
+          "type": "merchant",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 1088.95
+    },
+    {
+      "transaction_id": "27eae2e3-0c1b-448d-bb8c-4f833297791b",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 14.37,
+      "direction": "debit",
+      "date": "2025-07-08",
+      "authorized_date": "2025-07-08",
+      "name": "Franco Manca",
+      "merchant_name": "Franco Manca",
+      "payment_channel": "online",
+      "category": [
+        "Eating Out"
+      ],
+      "category_id": "10000002",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Franco Manca",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Franco Manca",
+          "type": "merchant",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 1074.58
+    },
+    {
+      "transaction_id": "12afefd1-1255-4c78-ac75-cf1da9318177",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 37.84,
+      "direction": "debit",
+      "date": "2025-07-09",
+      "authorized_date": "2025-07-09",
+      "name": "Waitrose",
+      "merchant_name": "Waitrose",
+      "payment_channel": "in_store",
+      "category": [
+        "Groceries"
+      ],
+      "category_id": "10000001",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Waitrose",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Waitrose",
+          "type": "merchant",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 1036.74
+    },
+    {
+      "transaction_id": "6b085b4a-fa26-4baa-8e77-81e87ea55f20",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 15.14,
+      "direction": "debit",
+      "date": "2025-07-09",
+      "authorized_date": "2025-07-09",
+      "name": "Honest Burgers",
+      "merchant_name": "Honest Burgers",
+      "payment_channel": "in_store",
+      "category": [
+        "Eating Out"
+      ],
+      "category_id": "10000002",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Honest Burgers",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Honest Burgers",
+          "type": "merchant",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 1021.6
+    },
+    {
+      "transaction_id": "2dbbe80d-1a6d-40cb-ad51-cd8a1aa4d35d",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 46.62,
+      "direction": "debit",
+      "date": "2025-07-10",
+      "authorized_date": "2025-07-10",
+      "name": "Sainsbury's Local",
+      "merchant_name": "Sainsbury's Local",
+      "payment_channel": "online",
+      "category": [
+        "Groceries"
+      ],
+      "category_id": "10000001",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Sainsbury's Local",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Sainsbury's Local",
+          "type": "merchant",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 974.98
+    },
+    {
+      "transaction_id": "222783a3-c643-4bba-a0dd-90fe78b02dce",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 8.63,
+      "direction": "debit",
+      "date": "2025-07-10",
+      "authorized_date": "2025-07-10",
+      "name": "Apple Services",
+      "merchant_name": "Apple Services",
+      "payment_channel": "online",
+      "category": [
+        "Entertainment"
+      ],
+      "category_id": "10000004",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Apple Services",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Apple Services",
+          "type": "merchant",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 966.35
+    },
+    {
+      "transaction_id": "0224a62a-414d-447f-8265-60d56f255f3f",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 53.66,
+      "direction": "debit",
+      "date": "2025-07-11",
+      "authorized_date": "2025-07-11",
+      "name": "Spotify",
+      "merchant_name": "Spotify",
+      "payment_channel": "online",
+      "category": [
+        "Entertainment"
+      ],
+      "category_id": "10000004",
+      "pending": false,
+      "transaction_type": "digital",
+      "transaction_code": null,
+      "location": {
+        "address": null,
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Spotify",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Spotify",
+          "type": "subscription",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 912.69
+    },
+    {
+      "transaction_id": "2fda0fb4-ceb3-47be-9d2c-95fbb6a7a95b",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 9.99,
+      "direction": "debit",
+      "date": "2025-07-12",
+      "authorized_date": "2025-07-12",
+      "name": "Spotify",
+      "merchant_name": "Spotify",
+      "payment_channel": "online",
+      "category": [
+        "Entertainment"
+      ],
+      "category_id": "10000004",
+      "pending": false,
+      "transaction_type": "digital",
+      "transaction_code": null,
+      "location": {
+        "address": null,
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Spotify",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Spotify",
+          "type": "subscription",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 902.7
+    },
+    {
+      "transaction_id": "ad6998e8-3e9b-4b68-8be0-9a384439e505",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 7.47,
+      "direction": "debit",
+      "date": "2025-07-12",
+      "authorized_date": "2025-07-12",
+      "name": "Franco Manca",
+      "merchant_name": "Franco Manca",
+      "payment_channel": "online",
+      "category": [
+        "Eating Out"
+      ],
+      "category_id": "10000002",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Franco Manca",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Franco Manca",
+          "type": "merchant",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 895.23
+    },
+    {
+      "transaction_id": "57effe25-22f6-42cb-8a44-d35f848590c1",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 26.96,
+      "direction": "debit",
+      "date": "2025-07-12",
+      "authorized_date": "2025-07-12",
+      "name": "Steam Games",
+      "merchant_name": "Steam Games",
+      "payment_channel": "in_store",
+      "category": [
+        "Entertainment"
+      ],
+      "category_id": "10000004",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Steam Games",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Steam Games",
+          "type": "merchant",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 868.27
+    },
+    {
+      "transaction_id": "857e42ec-497e-45b1-a51a-9b6af6094a81",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 18.79,
+      "direction": "debit",
+      "date": "2025-07-13",
+      "authorized_date": "2025-07-13",
+      "name": "Starbucks",
+      "merchant_name": "Starbucks",
+      "payment_channel": "in_store",
+      "category": [
+        "Eating Out"
+      ],
+      "category_id": "10000002",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Starbucks",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Starbucks",
+          "type": "merchant",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 849.48
+    },
+    {
+      "transaction_id": "19b18c7d-10cb-4f6e-9436-22d9a46ba863",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 37.49,
+      "direction": "debit",
+      "date": "2025-07-13",
+      "authorized_date": "2025-07-13",
+      "name": "Sainsbury's Local",
+      "merchant_name": "Sainsbury's Local",
+      "payment_channel": "online",
+      "category": [
+        "Groceries"
+      ],
+      "category_id": "10000001",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Sainsbury's Local",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Sainsbury's Local",
+          "type": "merchant",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 811.99
+    },
+    {
+      "transaction_id": "7089836d-38a0-46ac-8758-648c2bb81953",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 25.94,
+      "direction": "debit",
+      "date": "2025-07-13",
+      "authorized_date": "2025-07-13",
+      "name": "Lidl",
+      "merchant_name": "Lidl",
+      "payment_channel": "online",
+      "category": [
+        "Groceries"
+      ],
+      "category_id": "10000001",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Lidl",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Lidl",
+          "type": "merchant",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 786.05
+    },
+    {
+      "transaction_id": "68cd450e-c0a0-4184-9d0b-264e92dfe6dd",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 40.04,
+      "direction": "debit",
+      "date": "2025-07-14",
+      "authorized_date": "2025-07-14",
+      "name": "Tesco Express",
+      "merchant_name": "Tesco Express",
+      "payment_channel": "online",
+      "category": [
+        "Groceries"
+      ],
+      "category_id": "10000001",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Tesco Express",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Tesco Express",
+          "type": "merchant",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 746.01
+    },
+    {
+      "transaction_id": "e156b07c-ed02-43cb-a310-5045d218f88d",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 1133.86,
+      "direction": "credit",
+      "date": "2025-07-15",
+      "authorized_date": "2025-07-15",
+      "name": "Scholarship Payment",
+      "merchant_name": "Scholarship Payment",
+      "payment_channel": "online",
+      "category": [
+        "Income"
+      ],
+      "category_id": "10000000",
+      "pending": false,
+      "transaction_type": "digital",
+      "transaction_code": null,
+      "location": {
+        "address": null,
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Scholarship Payment",
+        "payer": "Scholarship Payment",
+        "payment_method": "bank_transfer",
+        "payment_processor": "FasterPayments",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Scholarship Payment",
+          "type": "employer",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 1879.87
+    },
+    {
+      "transaction_id": "4878b019-72a1-47d2-bdfa-2325b3ea1a6c",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 72.34,
+      "direction": "debit",
+      "date": "2025-07-15",
+      "authorized_date": "2025-07-15",
+      "name": "Octopus Energy",
+      "merchant_name": "Octopus Energy",
+      "payment_channel": "online",
+      "category": [
+        "Bills & Utilities"
+      ],
+      "category_id": "10000005",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Octopus Energy",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Octopus Energy",
+          "type": "utility",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 1807.53
+    },
+    {
+      "transaction_id": "77cdc2ea-026c-4791-92df-d8c6329bc026",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 21.54,
+      "direction": "debit",
+      "date": "2025-07-17",
+      "authorized_date": "2025-07-17",
+      "name": "Uber",
+      "merchant_name": "Uber",
+      "payment_channel": "in_store",
+      "category": [
+        "Transport"
+      ],
+      "category_id": "10000003",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Uber",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Uber",
+          "type": "merchant",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 1785.99
+    },
+    {
+      "transaction_id": "4ae2736f-f507-41b3-9eaa-f0954dfbf356",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 8.23,
+      "direction": "debit",
+      "date": "2025-07-17",
+      "authorized_date": "2025-07-17",
+      "name": "Uber",
+      "merchant_name": "Uber",
+      "payment_channel": "in_store",
+      "category": [
+        "Transport"
+      ],
+      "category_id": "10000003",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Uber",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Uber",
+          "type": "merchant",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 1777.76
+    },
+    {
+      "transaction_id": "87909fa7-66bc-4855-9274-377b303818b0",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 28.0,
+      "direction": "debit",
+      "date": "2025-07-18",
+      "authorized_date": "2025-07-18",
+      "name": "EE Mobile",
+      "merchant_name": "EE Mobile",
+      "payment_channel": "in_store",
+      "category": [
+        "Bills & Utilities"
+      ],
+      "category_id": "10000005",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "EE Mobile",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "EE Mobile",
+          "type": "utility",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 1749.76
+    },
+    {
+      "transaction_id": "545c5db2-7b5a-464d-8c8f-5955b3a8daf3",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 11.14,
+      "direction": "debit",
+      "date": "2025-07-18",
+      "authorized_date": "2025-07-18",
+      "name": "Netflix",
+      "merchant_name": "Netflix",
+      "payment_channel": "online",
+      "category": [
+        "Entertainment"
+      ],
+      "category_id": "10000004",
+      "pending": false,
+      "transaction_type": "digital",
+      "transaction_code": null,
+      "location": {
+        "address": null,
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Netflix",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Netflix",
+          "type": "subscription",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 1738.62
+    },
+    {
+      "transaction_id": "0a4bfc0d-bf3f-4d84-809c-522938ab8ba4",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 4.67,
+      "direction": "debit",
+      "date": "2025-07-19",
+      "authorized_date": "2025-07-19",
+      "name": "Uber",
+      "merchant_name": "Uber",
+      "payment_channel": "in_store",
+      "category": [
+        "Transport"
+      ],
+      "category_id": "10000003",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Uber",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Uber",
+          "type": "merchant",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 1733.95
+    },
+    {
+      "transaction_id": "d25deeeb-dc58-4494-b2fe-91d532a9b339",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 45.0,
+      "direction": "debit",
+      "date": "2025-07-20",
+      "authorized_date": "2025-07-20",
+      "name": "Virgin Media",
+      "merchant_name": "Virgin Media",
+      "payment_channel": "in_store",
+      "category": [
+        "Bills & Utilities"
+      ],
+      "category_id": "10000005",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Virgin Media",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Virgin Media",
+          "type": "utility",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 1688.95
+    },
+    {
+      "transaction_id": "f3cd45c4-a08a-4199-8af9-ab0752e699d8",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 43.99,
+      "direction": "debit",
+      "date": "2025-07-20",
+      "authorized_date": "2025-07-20",
+      "name": "Waitrose",
+      "merchant_name": "Waitrose",
+      "payment_channel": "in_store",
+      "category": [
+        "Groceries"
+      ],
+      "category_id": "10000001",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Waitrose",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Waitrose",
+          "type": "merchant",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 1644.96
+    },
+    {
+      "transaction_id": "3a484322-244f-47f9-b2e9-972aeb291de9",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 14.07,
+      "direction": "debit",
+      "date": "2025-07-20",
+      "authorized_date": "2025-07-20",
+      "name": "Steam Games",
+      "merchant_name": "Steam Games",
+      "payment_channel": "online",
+      "category": [
+        "Entertainment"
+      ],
+      "category_id": "10000004",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Steam Games",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Steam Games",
+          "type": "merchant",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 1630.89
+    },
+    {
+      "transaction_id": "1173cef5-8dc6-4e76-bf49-98873d10cad7",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 12.97,
+      "direction": "debit",
+      "date": "2025-07-21",
+      "authorized_date": "2025-07-21",
+      "name": "Costa Coffee",
+      "merchant_name": "Costa Coffee",
+      "payment_channel": "online",
+      "category": [
+        "Eating Out"
+      ],
+      "category_id": "10000002",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Costa Coffee",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Costa Coffee",
+          "type": "merchant",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 1617.92
+    },
+    {
+      "transaction_id": "21f0bcf4-0e21-4fcb-a8c0-8645f882e24a",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 29.83,
+      "direction": "debit",
+      "date": "2025-07-21",
+      "authorized_date": "2025-07-21",
+      "name": "Steam Games",
+      "merchant_name": "Steam Games",
+      "payment_channel": "in_store",
+      "category": [
+        "Entertainment"
+      ],
+      "category_id": "10000004",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Steam Games",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Steam Games",
+          "type": "merchant",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 1588.09
+    },
+    {
+      "transaction_id": "c6a7d35c-3126-40b9-99c3-648dc6366f50",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 13.82,
+      "direction": "debit",
+      "date": "2025-07-21",
+      "authorized_date": "2025-07-21",
+      "name": "Pret A Manger",
+      "merchant_name": "Pret A Manger",
+      "payment_channel": "in_store",
+      "category": [
+        "Eating Out"
+      ],
+      "category_id": "10000002",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Pret A Manger",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Pret A Manger",
+          "type": "merchant",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 1574.27
+    },
+    {
+      "transaction_id": "72086c88-1cf8-49e0-b90e-4e55caad5db5",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 41.27,
+      "direction": "debit",
+      "date": "2025-07-22",
+      "authorized_date": "2025-07-22",
+      "name": "Tesco Express",
+      "merchant_name": "Tesco Express",
+      "payment_channel": "in_store",
+      "category": [
+        "Groceries"
+      ],
+      "category_id": "10000001",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Tesco Express",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Tesco Express",
+          "type": "merchant",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 1533.0
+    },
+    {
+      "transaction_id": "9a079318-4d26-4401-a474-1a7f4876f0a9",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 11.33,
+      "direction": "debit",
+      "date": "2025-07-23",
+      "authorized_date": "2025-07-23",
+      "name": "ALDI",
+      "merchant_name": "ALDI",
+      "payment_channel": "in_store",
+      "category": [
+        "Groceries"
+      ],
+      "category_id": "10000001",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "ALDI",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "ALDI",
+          "type": "merchant",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 1521.67
+    },
+    {
+      "transaction_id": "9d6769c4-cd04-4c2f-9681-7ad9391b7847",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 34.65,
+      "direction": "debit",
+      "date": "2025-07-24",
+      "authorized_date": "2025-07-24",
+      "name": "Odeon Cinemas",
+      "merchant_name": "Odeon Cinemas",
+      "payment_channel": "online",
+      "category": [
+        "Entertainment"
+      ],
+      "category_id": "10000004",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Odeon Cinemas",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Odeon Cinemas",
+          "type": "merchant",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 1487.02
+    },
+    {
+      "transaction_id": "3663671e-0008-4dd4-acd5-7b9b7bfe6139",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 22.15,
+      "direction": "debit",
+      "date": "2025-07-25",
+      "authorized_date": "2025-07-25",
+      "name": "Thames Water",
+      "merchant_name": "Thames Water",
+      "payment_channel": "in_store",
+      "category": [
+        "Bills & Utilities"
+      ],
+      "category_id": "10000005",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Thames Water",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Thames Water",
+          "type": "utility",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 1464.87
+    },
+    {
+      "transaction_id": "5cee5207-430e-4650-bbfd-97705a948cf2",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 10.18,
+      "direction": "debit",
+      "date": "2025-07-25",
+      "authorized_date": "2025-07-25",
+      "name": "Odeon Cinemas",
+      "merchant_name": "Odeon Cinemas",
+      "payment_channel": "online",
+      "category": [
+        "Entertainment"
+      ],
+      "category_id": "10000004",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Odeon Cinemas",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Odeon Cinemas",
+          "type": "merchant",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 1454.69
+    },
+    {
+      "transaction_id": "e03471c0-a0e1-4e43-a17c-6d0bd5becf0e",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 17.92,
+      "direction": "debit",
+      "date": "2025-07-25",
+      "authorized_date": "2025-07-25",
+      "name": "Bolt",
+      "merchant_name": "Bolt",
+      "payment_channel": "in_store",
+      "category": [
+        "Transport"
+      ],
+      "category_id": "10000003",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Bolt",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Bolt",
+          "type": "merchant",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 1436.77
+    },
+    {
+      "transaction_id": "1d47c68e-0552-450b-93d5-6738e96cd70e",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 26.92,
+      "direction": "debit",
+      "date": "2025-07-26",
+      "authorized_date": "2025-07-26",
+      "name": "Tesco Express",
+      "merchant_name": "Tesco Express",
+      "payment_channel": "online",
+      "category": [
+        "Groceries"
+      ],
+      "category_id": "10000001",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Tesco Express",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Tesco Express",
+          "type": "merchant",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 1409.85
+    },
+    {
+      "transaction_id": "057ceff1-5c2a-44ef-9eb2-4191f5123a01",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 17.0,
+      "direction": "debit",
+      "date": "2025-07-26",
+      "authorized_date": "2025-07-26",
+      "name": "Sainsbury's Local",
+      "merchant_name": "Sainsbury's Local",
+      "payment_channel": "online",
+      "category": [
+        "Groceries"
+      ],
+      "category_id": "10000001",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Sainsbury's Local",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Sainsbury's Local",
+          "type": "merchant",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 1392.85
+    },
+    {
+      "transaction_id": "45cc3fd7-93af-40e7-8700-a6a599e15e71",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 45.98,
+      "direction": "debit",
+      "date": "2025-07-29",
+      "authorized_date": "2025-07-29",
+      "name": "Lidl",
+      "merchant_name": "Lidl",
+      "payment_channel": "in_store",
+      "category": [
+        "Groceries"
+      ],
+      "category_id": "10000001",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Lidl",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Lidl",
+          "type": "merchant",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 1346.87
+    },
+    {
+      "transaction_id": "41401970-bf8a-457f-ad0c-346b3e72dea9",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 51.54,
+      "direction": "debit",
+      "date": "2025-07-31",
+      "authorized_date": "2025-07-31",
+      "name": "Tesco Express",
+      "merchant_name": "Tesco Express",
+      "payment_channel": "in_store",
+      "category": [
+        "Groceries"
+      ],
+      "category_id": "10000001",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Tesco Express",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Tesco Express",
+          "type": "merchant",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 1295.33
+    },
+    {
+      "transaction_id": "92a470d8-74ea-4b8d-bf31-77d574de3913",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 18.54,
+      "direction": "debit",
+      "date": "2025-07-31",
+      "authorized_date": "2025-07-31",
+      "name": "Honest Burgers",
+      "merchant_name": "Honest Burgers",
+      "payment_channel": "in_store",
+      "category": [
+        "Eating Out"
+      ],
+      "category_id": "10000002",
+      "pending": false,
+      "transaction_type": "place",
+      "transaction_code": null,
+      "location": {
+        "address": "",
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Honest Burgers",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Honest Burgers",
+          "type": "merchant",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 1276.79
+    },
+    {
+      "transaction_id": "081c6fa9-6bc8-40b1-b503-d1f4bc2e65b8",
+      "account_id": "acc_uk_revolut_demo_001",
+      "iso_currency_code": "GBP",
+      "unofficial_currency_code": null,
+      "amount": 14.05,
+      "direction": "debit",
+      "date": "2025-07-31",
+      "authorized_date": "2025-07-31",
+      "name": "Netflix",
+      "merchant_name": "Netflix",
+      "payment_channel": "online",
+      "category": [
+        "Entertainment"
+      ],
+      "category_id": "10000004",
+      "pending": false,
+      "transaction_type": "digital",
+      "transaction_code": null,
+      "location": {
+        "address": null,
+        "city": "London",
+        "region": "",
+        "postal_code": "",
+        "country": "GB",
+        "lat": null,
+        "lon": null,
+        "store_number": null
+      },
+      "payment_meta": {
+        "by_order_of": null,
+        "payee": "Netflix",
+        "payer": null,
+        "payment_method": "card",
+        "payment_processor": "Mastercard",
+        "ppd_id": null,
+        "reason": null,
+        "reference_number": null
+      },
+      "counterparties": [
+        {
+          "name": "Netflix",
+          "type": "subscription",
+          "website": null,
+          "logo_url": null,
+          "confidence_level": "UNKNOWN"
+        }
+      ],
+      "running_balance": 1262.74
+    }
+  ]
+}

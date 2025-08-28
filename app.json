@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "wif-mobile-app",
-    "slug": "wif-mobile-app",
+    "name": "Vault",
+    "slug": "vault",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
-    "scheme": "wifmobileapp",
+    "icon": "./assets/images/vault-icon-light.svg",
+    "scheme": "vault",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
@@ -21,17 +21,17 @@
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/vault-icon-light.png"
     },
     "plugins": [
       "expo-router",
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash-icon.png",
+          "image": "./assets/images/vault-logo-light.svg",
           "imageWidth": 200,
           "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#00C851"
         }
       ]
     ],
