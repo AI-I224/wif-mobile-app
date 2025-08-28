@@ -101,7 +101,7 @@ export default function GamesScreen() {
     {
       id: 1,
       type: 'wager_invite',
-      title: 'Wager Invite from Sarah',
+      title: 'Challenge Invite from Sarah',
       message: 'Sarah invited you to join "Monthly Grocery Challenge"',
       time: '2 hours ago',
       icon: 'game-controller',
@@ -110,7 +110,7 @@ export default function GamesScreen() {
     {
       id: 2,
       type: 'wager_invite',
-      title: 'Wager Invite from Mike',
+      title: 'Challenge Invite from Mike',
       message: 'Mike invited you to join "Entertainment Budget Race"',
       time: '5 hours ago',
       icon: 'game-controller',
