@@ -45,7 +45,6 @@ export default function HomeScreen() {
   const [timeRange, setTimeRange] = useState<'week' | 'month'>('week');
   const [showTransactionHistory, setShowTransactionHistory] = useState(false);
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
-  const [showNotifications, setShowNotifications] = useState(false);
   const [showChatModal, setShowChatModal] = useState(false);
   const [chatMessages, setChatMessages] = useState<{id: string, role: 'user' | 'assistant', content: string, timestamp: Date}[]>([]);
   const [chatInput, setChatInput] = useState('');
@@ -221,45 +220,7 @@ INSTRUCTIONS:
     }
   };
 
-  // Notification data
-  const notifications = [
-    {
-      id: 1,
-      type: 'wager_invite',
-      title: 'Challenge Invite from Sarah',
-      message: 'Sarah invited you to join "Monthly Grocery Challenge"',
-      time: '2 hours ago',
-      icon: 'game-controller',
-      color: '#3b82f6',
-    },
-    {
-      id: 2,
-      type: 'wager_invite',
-      title: 'Challenge Invite from Mike',
-      message: 'Mike invited you to join "Entertainment Budget Race"',
-      time: '5 hours ago',
-      icon: 'game-controller',
-      color: '#3b82f6',
-    },
-    {
-      id: 3,
-      type: 'friend_request',
-      title: 'Friend Request from Emma',
-      message: 'Emma wants to connect with you',
-      time: '1 day ago',
-      icon: 'person-add',
-      color: '#10b981',
-    },
-    {
-      id: 4,
-      type: 'scam_detected',
-      title: 'Scam Detected',
-      message: 'We detected a suspicious email in your inbox',
-      time: '3 days ago',
-      icon: 'warning',
-      color: '#ef4444',
-    },
-  ];
+
 
   // Card data for swiping
   const cards = [
@@ -661,17 +622,7 @@ INSTRUCTIONS:
               <Text style={[styles.accountName, { color: colors.primaryText }]}>Sarah Williams</Text>
             </View>
           </View>
-          <TouchableOpacity 
-            style={styles.notificationButton}
-            onPress={() => setShowNotifications(true)}
-          >
-            <Ionicons name="notifications-outline" size={24} color={colors.primaryText} />
-            {notifications.length > 0 && (
-              <View style={[styles.notificationBadge, { backgroundColor: '#ef4444' }]}>
-                <Text style={styles.notificationBadgeText}>{notifications.length}</Text>
-              </View>
-            )}
-          </TouchableOpacity>
+
         </View>
       </MetalHeader>
 
@@ -1027,62 +978,7 @@ INSTRUCTIONS:
         </SafeAreaView>
       </Modal>
 
-      {/* Notifications Modal */}
-      <Modal
-        visible={showNotifications}
-        animationType="slide"
-        presentationStyle="pageSheet"
-      >
-        <SafeAreaView style={[styles.modalContainer, { backgroundColor: colors.profileBackground }]}>
-          <View style={[styles.modalHeader, { borderBottomColor: colors.borderColor }]}>
-            <Text style={[styles.modalTitle, { color: colors.primaryText }]}>Notifications</Text>
-            <TouchableOpacity
-              onPress={() => setShowNotifications(false)}
-              style={styles.closeButton}
-            >
-              <Ionicons name="close" size={24} color={colors.primaryText} />
-            </TouchableOpacity>
-          </View>
-          
-          <ScrollView style={styles.modalContent}>
-            {notifications.map((notification) => (
-              <View key={notification.id} style={[styles.notificationItem, { borderBottomColor: colors.borderColor }]}>
-                <View style={styles.notificationLeft}>
-                  <View style={[styles.notificationIcon, { backgroundColor: notification.color }]}>
-                    <Ionicons 
-                      name={notification.icon as any} 
-                      size={20} 
-                      color="#FFFFFF" 
-                    />
-                  </View>
-                  <View style={styles.notificationDetails}>
-                    <Text style={[styles.notificationTitle, { color: colors.primaryText }]}>{notification.title}</Text>
-                    <Text style={[styles.notificationMessage, { color: colors.secondaryText }]}>{notification.message}</Text>
-                    <Text style={[styles.notificationTime, { color: colors.secondaryText }]}>{notification.time}</Text>
-                  </View>
-                </View>
-                <TouchableOpacity style={styles.notificationAction}>
-                  {notification.type === 'wager_invite' && (
-                    <View style={[styles.actionButton, { backgroundColor: notification.color }]}>
-                      <Text style={styles.actionButtonText}>Join</Text>
-                    </View>
-                  )}
-                  {notification.type === 'friend_request' && (
-                    <View style={[styles.actionButton, { backgroundColor: notification.color }]}>
-                      <Text style={styles.actionButtonText}>Accept</Text>
-                    </View>
-                  )}
-                  {notification.type === 'scam_detected' && (
-                    <View style={[styles.actionButton, { backgroundColor: notification.color }]}>
-                      <Text style={styles.actionButtonText}>Review</Text>
-                    </View>
-                  )}
-                </TouchableOpacity>
-              </View>
-            ))}
-          </ScrollView>
-        </SafeAreaView>
-      </Modal>
+
 
       {/* Chat Modal */}
       <Modal
@@ -1297,15 +1193,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
   },
-  notificationButton: {
-    padding: 8,
-    width: 40,
-    height: 40,
-    borderRadius: 20,
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexShrink: 0,
-  },
+
   scrollView: {
     flex: 1,
   },
@@ -1808,75 +1696,8 @@ const styles = StyleSheet.create({
     shadowRadius: 8,
     elevation: 4,
   },
-  notificationBadge: {
-    position: 'absolute',
-    top: -2,
-    right: -2,
-    width: 18,
-    height: 18,
-    borderRadius: 9,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  notificationBadgeText: {
-    color: '#FFFFFF',
-    fontSize: 10,
-    fontWeight: '600',
-  },
-  notificationItem: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingVertical: 16,
-    paddingHorizontal: 20,
-    borderBottomWidth: 1,
-    borderBottomColor: '#1f1f1f',
-  },
-  notificationLeft: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    flex: 1,
-    marginRight: 16,
-  },
-  notificationIcon: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginRight: 16,
-  },
-  notificationDetails: {
-    flex: 1,
-  },
-  notificationTitle: {
-    fontSize: 16,
-    fontWeight: '600',
-    marginBottom: 4,
-  },
-  notificationMessage: {
-    fontSize: 14,
-    fontWeight: '400',
-    marginBottom: 4,
-    lineHeight: 20,
-  },
-  notificationTime: {
-    fontSize: 12,
-    fontWeight: '400',
-  },
-  notificationAction: {
-    alignItems: 'flex-end',
-  },
-  actionButton: {
-    paddingHorizontal: 16,
-    paddingVertical: 8,
-    borderRadius: 20,
-  },
-  actionButtonText: {
-    color: '#FFFFFF',
-    fontSize: 14,
-    fontWeight: '600',
-  },
+
+
   modalCloseButton: {
     padding: 8,
   },
