@@ -1,4 +1,3 @@
-import MetalHeader from '@/components/ui/MetalHeader';
 import { OPENAI_CONFIG } from '@/config/openai';
 import { Colors } from '@/constants/Colors';
 import { useTheme } from '@/hooks/useTheme';
@@ -6,15 +5,15 @@ import { Ionicons } from '@expo/vector-icons';
 import { router } from 'expo-router';
 import React, { useState } from 'react';
 import {
-  FlatList,
-  Image,
-  Modal,
-  SafeAreaView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View
+    FlatList,
+    Image,
+    Modal,
+    SafeAreaView,
+    StatusBar,
+    StyleSheet,
+    Text,
+    TouchableOpacity,
+    View
 } from 'react-native';
 
 interface Post {
@@ -458,45 +457,39 @@ export default function SocialScreen() {
       <StatusBar barStyle={colors.statusBar as any} backgroundColor={colors.profileBackground} />
       
       {/* Header */}
-      <MetalHeader isDark={isDark} style={styles.header}>
+      <View style={styles.header}>
         <View style={styles.headerContent}>
-          <View style={styles.headerLeft}>
-            <TouchableOpacity 
-              style={styles.avatarContainer}
-              onPress={() => router.push('/profile')}
-            >
-              <Image
-                source={require('../../assets/images/avatar.png')}
-                style={[styles.avatar, { borderColor: colors.borderColor }]}
-              />
-            </TouchableOpacity>
-            <View>
-              <Text style={[styles.accountName, { color: colors.primaryText }]}>Sarah Williams</Text>
+          <TouchableOpacity 
+            style={styles.avatarContainer}
+            onPress={() => router.push('/profile')}
+          >
+            <Image
+              source={require('../../assets/images/avatar.png')}
+              style={[styles.avatar, { borderColor: colors.borderColor }]}
+            />
+          </TouchableOpacity>
+          
+          <View style={styles.searchBarContainer}>
+            <View style={[styles.searchBar, { backgroundColor: colors.cardBackground }]}>
+              <Ionicons name="search" size={20} color={colors.secondaryText} style={styles.searchIcon} />
+              <Text style={[styles.searchPlaceholder, { color: colors.secondaryText }]}>Search</Text>
             </View>
           </View>
-          <TouchableOpacity 
-            style={styles.notificationButton}
-            onPress={() => setShowNotifications(true)}
-          >
-            <Ionicons name="notifications-outline" size={24} color={colors.primaryText} />
-            {notifications.length > 0 && (
-              <View style={[styles.notificationBadge, { backgroundColor: '#ef4444' }]}>
-                <Text style={styles.notificationBadgeText}>{notifications.length}</Text>
-              </View>
-            )}
-          </TouchableOpacity>
+          
+          <View style={styles.headerRight}>
+            <TouchableOpacity 
+              style={styles.headerActionButton}
+              onPress={() => setShowNotifications(true)}
+            >
+              <Ionicons name="notifications-outline" size={24} color={colors.primaryText} />
+              {notifications.length > 0 && (
+                <View style={[styles.notificationBadge, { backgroundColor: '#ef4444' }]}>
+                  <Text style={styles.notificationBadgeText}>{notifications.length}</Text>
+                </View>
+              )}
+            </TouchableOpacity>
+          </View>
         </View>
-      </MetalHeader>
-
-      {/* Search Bar */}
-      <View style={styles.searchContainer}>
-        <View style={[styles.searchBar, { backgroundColor: colors.cardBackground }]}>
-          <Ionicons name="search" size={20} color={colors.secondaryText} style={styles.searchIcon} />
-          <Text style={[styles.searchPlaceholder, { color: colors.secondaryText }]}>Explore</Text>
-        </View>
-        <TouchableOpacity style={[styles.searchActionButton, { backgroundColor: colors.tint }]}>
-          <Ionicons name="chatbubbles" size={20} color="#ffffff" />
-        </TouchableOpacity>
       </View>
 
       {/* Tab Navigation */}
@@ -695,28 +688,33 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   header: {
+    paddingHorizontal: 20,
+    paddingTop: 8,
+    paddingBottom: 16,
+  },
+  headerContent: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingHorizontal: 20,
-    paddingVertical: 16,
   },
-  headerTitle: {
-    fontSize: 24,
-    fontWeight: '700',
-  },
-  searchButton: {
-    padding: 8,
-  },
-  searchContainer: {
-    flexDirection: 'row',
+  avatarContainer: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    justifyContent: 'center',
     alignItems: 'center',
-    paddingHorizontal: 20,
-    paddingVertical: 16,
-    gap: 12,
+    overflow: 'hidden',
+  },
+  avatar: {
+    width: '100%',
+    height: '100%',
+    borderRadius: 20,
+  },
+  searchBarContainer: {
+    flex: 1,
+    marginHorizontal: 12,
   },
   searchBar: {
-    flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
     borderRadius: 20,
@@ -729,6 +727,34 @@ const styles = StyleSheet.create({
   searchPlaceholder: {
     fontSize: 16,
     flex: 1,
+  },
+  headerRight: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  headerActionButton: {
+    padding: 8,
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexShrink: 0,
+  },
+  notificationBadge: {
+    position: 'absolute',
+    top: -2,
+    right: -2,
+    width: 18,
+    height: 18,
+    borderRadius: 9,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  notificationBadgeText: {
+    color: '#FFFFFF',
+    fontSize: 10,
+    fontWeight: '600',
   },
   searchActionButton: {
     width: 44,
