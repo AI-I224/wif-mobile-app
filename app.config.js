@@ -1,0 +1,47 @@
+import 'dotenv/config';
+
+export default {
+  expo: {
+    name: "Vault",
+    slug: "vault",
+    version: "1.0.0",
+    orientation: "portrait",
+    icon: "./assets/images/vault-icon-light.svg",
+    scheme: "vault",
+    userInterfaceStyle: "automatic",
+    newArchEnabled: true,
+    ios: {
+      supportsTablet: true
+    },
+    android: {
+      adaptiveIcon: {
+        foregroundImage: "./assets/images/adaptive-icon.png",
+        backgroundColor: "#ffffff"
+      },
+      edgeToEdgeEnabled: true
+    },
+    web: {
+      bundler: "metro",
+      output: "static",
+      favicon: "./assets/images/vault-logo-light.png"
+    },
+    plugins: [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          image: "./assets/images/vault-logo-light.svg",
+          imageWidth: 200,
+          resizeMode: "contain",
+          backgroundColor: "#00C851"
+        }
+      ]
+    ],
+    experiments: {
+      typedRoutes: true
+    },
+    extra: {
+      openaiApiKey: process.env.OPENAI_API_KEY
+    }
+  }
+};
