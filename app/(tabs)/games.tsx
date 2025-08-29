@@ -1,4 +1,3 @@
-import MetalHeader from '@/components/ui/MetalHeader';
 import { Colors } from '@/constants/Colors';
 import { useTheme } from '@/hooks/useTheme';
 import { Ionicons } from '@expo/vector-icons';
@@ -36,65 +35,8 @@ export default function GamesScreen() {
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [showAnswer, setShowAnswer] = useState(false);
   const [totalPoints, setTotalPoints] = useState(250); // Mock total points
-  const [showShop, setShowShop] = useState(false);
 
-  // Shop items data
-  const shopItems = [
-    {
-      id: 1,
-      company: "University of Bath SU Shop",
-      discount: "£5 off",
-      pointsCost: 100,
-      description: "£5 off textbooks, stationery, or merch at the SU Shop (min. £25 spend).",
-      gradient: ['#003C71', '#5AB0E6'], // Uni of Bath blue tones
-      logo: require('../../assets/images/bath-su-logo.png'),
-    },
-    {
-      id: 2,
-      company: "Pret A Manger (Student)",
-      discount: "£3 off",
-      pointsCost: 150,
-      description: "£3 off any coffee + pastry combo. Show student ID at pickup.",
-      gradient: ['#7A0026', '#C8102E'],
-      logo: require('../../assets/images/pret-logo.png'),
-    },
-    {
-      id: 3,
-      company: "Costa Coffee (Student)",
-      discount: "£4 off",
-      pointsCost: 200,
-      description: "£4 off any order of £15 or more at participating Costa stores.",
-      gradient: ['#A6192E', '#6E0D1C'], // Costa burgundy tones
-      logo: require('../../assets/images/costa-logo.png'),
-    },
-    {
-      id: 4,
-      company: "University of Bath Sports Pass",
-      discount: "1 Week Free",
-      pointsCost: 500,
-      description: "Enjoy 1 free week of access to campus gym & classes (new student members).",
-      gradient: ['#E50914', '#B81D24'], // bold/red hero gradient
-      logo: require('../../assets/images/bath-su-logo.png'),
-    },
-    {
-      id: 5,
-      company: "Boots (Student)",
-      discount: "£10 off",
-      pointsCost: 850,
-      description: "£10 off when you spend £50+ on health & beauty in-store or online.",
-      gradient: ['#00205B', '#005EB8'],
-      logo: require('../../assets/images/boots-logo.png'),
-    },
-    {
-      id: 6,
-      company: "Deliveroo (Student)",
-      discount: "£20 off",
-      pointsCost: 1000,
-      description: "£20 off across your next two orders (£10 + £10, min. spend applies).",
-      gradient: ['#00C1B2', '#00A3AD'],
-      logo: require('../../assets/images/deliveroo-logo.png'),
-    },
-  ];
+
 
   // Notification data
   const notifications = [
@@ -377,48 +319,43 @@ export default function GamesScreen() {
     </View>
   );
 
-  const handlePurchaseItem = (item: any) => {
-    if (totalPoints >= item.pointsCost) {
-      setTotalPoints(prev => prev - item.pointsCost);
-      // Here you would typically make an API call to process the purchase
-      console.log(`Purchased ${item.company} discount for ${item.pointsCost} points`);
-    }
-  };
+
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: colors.profileBackground }]}>
       <StatusBar barStyle={colors.statusBar as any} backgroundColor={colors.profileBackground} />
       
       {/* Header */}
-      <MetalHeader isDark={isDark} style={styles.header}>
+      <View style={styles.header}>
         <View style={styles.headerContent}>
-          <View style={styles.headerLeft}>
-            <TouchableOpacity 
-              style={styles.avatarContainer}
-              onPress={() => router.push('/profile')}
-            >
-              <Image
-                source={require('../../assets/images/avatar.png')}
-                style={[styles.avatar, { borderColor: colors.borderColor }]}
-              />
-            </TouchableOpacity>
-            <View>
-              <Text style={[styles.accountName, { color: colors.primaryText }]}>Sarah Williams</Text>
-            </View>
-          </View>
           <TouchableOpacity 
-            style={styles.notificationButton}
-            onPress={() => setShowNotifications(true)}
+            style={styles.avatarContainer}
+            onPress={() => router.push('/profile')}
           >
-            <Ionicons name="notifications-outline" size={24} color={colors.primaryText} />
-            {notifications.length > 0 && (
-              <View style={[styles.notificationBadge, { backgroundColor: '#ef4444' }]}>
-                <Text style={styles.notificationBadgeText}>{notifications.length}</Text>
-              </View>
-            )}
+            <Image
+              source={require('../../assets/images/avatar.png')}
+              style={[styles.avatar, { borderColor: colors.borderColor }]}
+            />
           </TouchableOpacity>
+          
+          <View style={styles.headerCenter}>
+          </View>
+          
+          <View style={styles.headerRight}>
+            <TouchableOpacity 
+              style={styles.headerActionButton}
+              onPress={() => setShowNotifications(true)}
+            >
+              <Ionicons name="notifications-outline" size={24} color={colors.primaryText} />
+              {notifications.length > 0 && (
+                <View style={[styles.notificationBadge, { backgroundColor: '#ef4444' }]}>
+                  <Text style={styles.notificationBadgeText}>{notifications.length}</Text>
+                </View>
+              )}
+            </TouchableOpacity>
+          </View>
         </View>
-      </MetalHeader>
+      </View>
 
               <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
           {/* Total Points Section */}
@@ -428,13 +365,7 @@ export default function GamesScreen() {
               <View style={[styles.totalPointsCircle, { backgroundColor: colors.tint }]}>
                 <Text style={styles.totalPointsText}>{totalPoints}</Text>
               </View>
-              <TouchableOpacity 
-                style={[styles.shopButton, { backgroundColor: colors.tint }]}
-                onPress={() => setShowShop(true)}
-              >
-                <Ionicons name="bag" size={32} color="#FFFFFF" />
-                <Text style={styles.shopButtonText}>Shop</Text>
-              </TouchableOpacity>
+
             </View>
           </View>
 
@@ -672,75 +603,7 @@ export default function GamesScreen() {
         </SafeAreaView>
       </Modal>
 
-      {/* Shop Modal */}
-      <Modal
-        visible={showShop}
-        animationType="slide"
-        presentationStyle="pageSheet"
-      >
-        <SafeAreaView style={[styles.modalContainer, { backgroundColor: colors.profileBackground }]}>
-          <View style={[styles.modalHeader, { borderBottomColor: colors.borderColor }]}>
-            <TouchableOpacity
-              onPress={() => setShowShop(false)}
-              style={styles.closeButton}
-            >
-              <Ionicons name="arrow-back" size={24} color={colors.primaryText} />
-            </TouchableOpacity>
-            <Text style={[styles.modalTitle, { color: colors.primaryText }]}>Shop</Text>
-            <View style={styles.shopHeaderRight}>
-              <View style={[styles.shopPointsBadge, { backgroundColor: colors.tint }]}>
-                <Text style={styles.shopPointsText}>{totalPoints} pts</Text>
-              </View>
-            </View>
-          </View>
-          
-          <ScrollView style={styles.modalContent}>
-            <View style={styles.shopContent}>
-              {shopItems.map((item) => (
-                <View key={item.id} style={[styles.shopItemCard, { backgroundColor: colors.cardBackground }]}>
-                  <View style={styles.shopItemHeader}>
-                    <View style={styles.shopItemLeft}>
-                      <Image source={item.logo} style={styles.shopItemLogo} />
-                      <View style={styles.shopItemInfo}>
-                        <Text style={[styles.shopItemCompany, { color: colors.primaryText }]}>
-                          {item.company}
-                        </Text>
-                        <Text style={[styles.shopItemDescription, { color: colors.secondaryText }]}>
-                          {item.description}
-                        </Text>
-                      </View>
-                    </View>
-                    <View style={styles.shopItemRight}>
-                      <Text style={[styles.shopItemDiscount, { color: colors.primaryText }]}>
-                        {item.discount}
-                      </Text>
-                      <Text style={[styles.shopItemPoints, { color: colors.tint }]}>
-                        {item.pointsCost} pts
-                      </Text>
-                    </View>
-                  </View>
-                  
-                  <TouchableOpacity
-                    style={[
-                      styles.shopItemButton,
-                      { 
-                        backgroundColor: totalPoints >= item.pointsCost ? colors.tint : '#6B7280',
-                        opacity: totalPoints >= item.pointsCost ? 1 : 0.5
-                      }
-                    ]}
-                    onPress={() => handlePurchaseItem(item)}
-                    disabled={totalPoints < item.pointsCost}
-                  >
-                    <Text style={styles.shopItemButtonText}>
-                      {totalPoints >= item.pointsCost ? 'Purchase' : 'Not Enough Points'}
-                    </Text>
-                  </TouchableOpacity>
-                </View>
-              ))}
-            </View>
-          </ScrollView>
-        </SafeAreaView>
-      </Modal>
+
 
       {/* Quiz Game Modal */}
       <Modal
@@ -927,14 +790,13 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   header: {
+    paddingHorizontal: 20,
+    paddingTop: 8,
+    paddingBottom: 16,
+  },
+  headerContent: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingHorizontal: 20,
-    paddingVertical: 16,
-  },
-  headerLeft: {
-    flexDirection: 'row',
     alignItems: 'center',
   },
   avatarContainer: {
@@ -943,7 +805,6 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     justifyContent: 'center',
     alignItems: 'center',
-    marginRight: 12,
     overflow: 'hidden',
   },
   avatar: {
@@ -951,16 +812,27 @@ const styles = StyleSheet.create({
     height: '100%',
     borderRadius: 20,
   },
-  accountName: {
-    color: '#ffffff',
-    fontSize: 16,
-    fontWeight: '600',
-  },
-  headerContent: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+  headerCenter: {
+    flex: 1,
     alignItems: 'center',
-    width: '100%',
+  },
+  headerTitle: {
+    fontSize: 28,
+    fontWeight: '700',
+    marginBottom: 2,
+  },
+  headerRight: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  headerActionButton: {
+    padding: 8,
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexShrink: 0,
   },
   notificationButton: {
     padding: 8,
@@ -971,9 +843,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexShrink: 0,
   },
-  headerTitle: {
-    fontSize: 24,
-    fontWeight: '700',
+  notificationBadge: {
+    position: 'absolute',
+    top: -2,
+    right: -2,
+    width: 18,
+    height: 18,
+    borderRadius: 9,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  notificationBadgeText: {
+    color: '#FFFFFF',
+    fontSize: 10,
+    fontWeight: '600',
   },
   settingsButton: {
     padding: 8,
@@ -1353,21 +1236,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '600',
     marginLeft: 12,
-  },
-  notificationBadge: {
-    position: 'absolute',
-    top: -2,
-    right: -2,
-    width: 18,
-    height: 18,
-    borderRadius: 9,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  notificationBadgeText: {
-    color: '#FFFFFF',
-    fontSize: 10,
-    fontWeight: '600',
   },
   notificationItem: {
     flexDirection: 'row',

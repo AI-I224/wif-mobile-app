@@ -1,22 +1,24 @@
-import MetalHeader from '@/components/ui/MetalHeader';
 import { Colors } from '@/constants/Colors';
 import { useTheme } from '@/hooks/useTheme';
 import { Ionicons } from '@expo/vector-icons';
-import { router } from 'expo-router';
-import React from 'react';
+import { useRouter } from 'expo-router';
+import React, { useState } from 'react';
 import {
-  Image,
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
+    Image,
+    Modal,
+    SafeAreaView,
+    ScrollView,
+    StatusBar,
+    StyleSheet,
+    Text,
+    TouchableOpacity,
+    View,
 } from 'react-native';
 
 export default function ProfileScreen() {
-  const { isDark, toggleTheme } = useTheme();
+  const { isDark, themeMode, setTheme } = useTheme();
+  const router = useRouter();
+  const [showThemeModal, setShowThemeModal] = useState(false);
   const colors = isDark ? Colors.dark : Colors.light;
   const friendsCount = 82; // Friends count as requested
 
@@ -39,19 +41,13 @@ export default function ProfileScreen() {
     <SafeAreaView style={[styles.container, { backgroundColor: colors.profileBackground }]}>
       <StatusBar barStyle={colors.statusBar as any} backgroundColor={colors.profileBackground} />
       
-      {/* Custom Header */}
-      <MetalHeader isDark={isDark} style={styles.header}>
-        <View style={styles.headerContent}>
-          <TouchableOpacity 
-            style={styles.backButton}
-            onPress={() => router.back()}
-          >
-            <Ionicons name="arrow-back" size={24} color={colors.primaryText} />
-          </TouchableOpacity>
-          <Text style={[styles.headerTitle, { color: colors.primaryText }]}>My Profile</Text>
-          <View style={styles.headerRight} />
-        </View>
-      </MetalHeader>
+      {/* Back Button */}
+      <TouchableOpacity 
+        style={styles.backButton} 
+        onPress={() => router.back()}
+      >
+        <Ionicons name="arrow-back" size={24} color={colors.primaryText} />
+      </TouchableOpacity>
       
       <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
         {/* Profile Section */}
@@ -81,15 +77,15 @@ export default function ProfileScreen() {
           {/* Theme Toggle */}
           <TouchableOpacity 
             style={[styles.themeToggle, { backgroundColor: colors.cardBackground }]} 
-            onPress={toggleTheme}
+            onPress={() => setShowThemeModal(true)}
           >
             <Ionicons 
-              name={isDark ? 'sunny-outline' : 'moon-outline'} 
+              name="color-palette-outline" 
               size={20} 
               color={colors.primaryText} 
             />
             <Text style={[styles.themeToggleText, { color: colors.primaryText }]}>
-              {isDark ? 'Light Mode' : 'Dark Mode'}
+              Change Theme
             </Text>
           </TouchableOpacity>
         </View>
@@ -131,6 +127,109 @@ export default function ProfileScreen() {
           ))}
         </View>
       </ScrollView>
+
+      {/* Theme Selection Modal */}
+      <Modal
+        visible={showThemeModal}
+        animationType="slide"
+        presentationStyle="pageSheet"
+        onRequestClose={() => setShowThemeModal(false)}
+      >
+        <SafeAreaView style={[styles.modalContainer, { backgroundColor: colors.profileBackground }]}>
+          <View style={[styles.modalHeader, { borderBottomColor: colors.borderColor }]}>
+            <TouchableOpacity
+              onPress={() => setShowThemeModal(false)}
+              style={styles.closeButton}
+            >
+              <Ionicons name="close" size={24} color={colors.primaryText} />
+            </TouchableOpacity>
+            <Text style={[styles.modalTitle, { color: colors.primaryText }]}>Choose Theme</Text>
+            <View style={{ width: 24 }} />
+          </View>
+          
+          <View style={styles.modalContent}>
+            <View style={styles.themeOptions}>
+              <TouchableOpacity 
+                style={[
+                  styles.themeOption, 
+                  { 
+                    backgroundColor: themeMode === 'light' ? colors.tint : colors.cardBackground,
+                    borderColor: colors.borderColor 
+                  }
+                ]} 
+                onPress={() => {
+                  setTheme('light');
+                  setShowThemeModal(false);
+                }}
+              >
+                <Ionicons 
+                  name="sunny-outline" 
+                  size={24} 
+                  color={themeMode === 'light' ? '#FFFFFF' : colors.primaryText} 
+                />
+                <Text style={[
+                  styles.themeOptionText, 
+                  { color: themeMode === 'light' ? '#FFFFFF' : colors.primaryText }
+                ]}>
+                  Light
+                </Text>
+              </TouchableOpacity>
+              
+              <TouchableOpacity 
+                style={[
+                  styles.themeOption, 
+                  { 
+                    backgroundColor: themeMode === 'dark' ? colors.tint : colors.cardBackground,
+                    borderColor: colors.borderColor 
+                  }
+                ]} 
+                onPress={() => {
+                  setTheme('dark');
+                  setShowThemeModal(false);
+                }}
+              >
+                <Ionicons 
+                  name="moon-outline" 
+                  size={24} 
+                  color={themeMode === 'dark' ? '#FFFFFF' : colors.primaryText} 
+                />
+                <Text style={[
+                  styles.themeOptionText, 
+                  { color: themeMode === 'dark' ? '#FFFFFF' : colors.primaryText }
+                ]}>
+                  Dark
+                </Text>
+              </TouchableOpacity>
+              
+              <TouchableOpacity 
+                style={[
+                  styles.themeOption, 
+                  { 
+                    backgroundColor: themeMode === 'system' ? colors.tint : colors.cardBackground,
+                    borderColor: colors.borderColor 
+                  }
+                ]} 
+                onPress={() => {
+                  setTheme('system');
+                  setShowThemeModal(false);
+                }}
+              >
+                <Ionicons 
+                  name="phone-portrait-outline" 
+                  size={24} 
+                  color={themeMode === 'system' ? '#FFFFFF' : colors.primaryText} 
+                />
+                <Text style={[
+                  styles.themeOptionText, 
+                  { color: themeMode === 'system' ? '#FFFFFF' : colors.primaryText }
+                ]}>
+                  System
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </SafeAreaView>
+      </Modal>
     </SafeAreaView>
   );
 }
@@ -139,30 +238,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingHorizontal: 20,
-    paddingVertical: 16,
-    borderBottomWidth: 1,
-  },
-  headerContent: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    width: '100%',
-  },
-  backButton: {
-    padding: 8,
-  },
-  headerTitle: {
-    fontSize: 20,
-    fontWeight: '600',
-  },
-  headerRight: {
-    width: 40,
-  },
+
   scrollView: {
     flex: 1,
   },
@@ -210,15 +286,73 @@ const styles = StyleSheet.create({
     fontSize: 14,
     marginLeft: 6,
   },
+  backButton: {
+    position: 'absolute',
+    top: 60,
+    left: 20,
+    zIndex: 10,
+    padding: 8,
+  },
   themeToggle: {
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 16,
-    paddingVertical: 10,
-    borderRadius: 20,
+    paddingVertical: 12,
+    borderRadius: 12,
     gap: 8,
   },
   themeToggleText: {
+    fontSize: 16,
+    fontWeight: '500',
+  },
+  modalContainer: {
+    flex: 1,
+  },
+  modalHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 20,
+    paddingVertical: 16,
+    borderBottomWidth: 1,
+  },
+  closeButton: {
+    padding: 8,
+  },
+  modalTitle: {
+    fontSize: 18,
+    fontWeight: '600',
+  },
+  modalContent: {
+    flex: 1,
+    padding: 20,
+  },
+  themeSection: {
+    padding: 20,
+    borderRadius: 16,
+    marginBottom: 16,
+  },
+  themeSectionTitle: {
+    fontSize: 18,
+    fontWeight: '600',
+    marginBottom: 16,
+  },
+  themeOptions: {
+    flexDirection: 'row',
+    gap: 12,
+  },
+  themeOption: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+    borderRadius: 12,
+    borderWidth: 1,
+    gap: 8,
+  },
+  themeOptionText: {
     fontSize: 14,
     fontWeight: '500',
   },

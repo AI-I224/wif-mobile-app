@@ -1,4 +1,3 @@
-import MetalHeader from '@/components/ui/MetalHeader';
 import { Colors } from '@/constants/Colors';
 import { useTheme } from '@/hooks/useTheme';
 import { Ionicons } from '@expo/vector-icons';
@@ -49,6 +48,25 @@ export default function HomeScreen() {
   const [chatMessages, setChatMessages] = useState<{id: string, role: 'user' | 'assistant', content: string, timestamp: Date}[]>([]);
   const [chatInput, setChatInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [showNotifications, setShowNotifications] = useState(false);
+  
+  // Mock notifications data
+  const notifications = [
+    {
+      id: '1',
+      title: 'Payment Received',
+      message: 'You received £150.00 from John Doe',
+      time: '2 hours ago',
+      type: 'payment'
+    },
+    {
+      id: '2',
+      title: 'Budget Alert',
+      message: 'You\'re approaching your dining out budget',
+      time: '1 day ago',
+      type: 'alert'
+    }
+  ];
   
   // Animation values for card swiping
   const translateX = useRef(new Animated.Value(0)).current;
@@ -605,10 +623,9 @@ INSTRUCTIONS:
       <SafeAreaView style={[styles.container, { backgroundColor: colors.profileBackground }]}>
         <StatusBar barStyle={colors.statusBar as any} backgroundColor={colors.profileBackground} />
       
-      {/* Header */}
-      <MetalHeader isDark={isDark} style={styles.header}>
-        <View style={styles.headerContent}>
-          <View style={styles.headerLeft}>
+        {/* Header */}
+        <View style={styles.header}>
+          <View style={styles.headerContent}>
             <TouchableOpacity 
               style={styles.avatarContainer}
               onPress={() => router.push('/profile')}
@@ -618,60 +635,99 @@ INSTRUCTIONS:
                 style={styles.avatar}
               />
             </TouchableOpacity>
-            <View>
-              <Text style={[styles.accountName, { color: colors.primaryText }]}>Sarah Williams</Text>
+            
+            <View style={styles.headerCenter}>
+              <Text style={[styles.headerTitle, { color: colors.primaryText }]}>Sarah Williams</Text>
+              <View style={styles.levelBarContainer}>
+                <View style={[styles.progressBar, { backgroundColor: colors.borderColor }]}>
+                  <View style={[styles.progressFill, { backgroundColor: '#10b981', width: '78%' }]} />
+                </View>
+                <View style={styles.levelInfo}>
+                  <Text style={[styles.levelText, { color: colors.secondaryText }]}>Level 7</Text>
+                  <Text style={[styles.xpText, { color: colors.primaryText }]}>9,450 XP</Text>
+                </View>
+              </View>
+            </View>
+            
+            <View style={styles.headerRight}>
+              <TouchableOpacity 
+                style={styles.headerActionButton}
+                onPress={() => setShowNotifications(true)}
+              >
+                <Ionicons name="notifications-outline" size={24} color={colors.primaryText} />
+                {notifications.length > 0 && (
+                  <View style={[styles.notificationBadge, { backgroundColor: '#ef4444' }]}>
+                    <Text style={styles.notificationBadgeText}>{notifications.length}</Text>
+                  </View>
+                )}
+              </TouchableOpacity>
             </View>
           </View>
-
         </View>
-      </MetalHeader>
 
-      <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
-        {/* Balance Section */}
-        <View style={styles.balanceSection}>
-          <View style={styles.balanceHeader}>
-            <Text style={[styles.balanceLabel, { color: colors.primaryText }]}>Total Balance</Text>
-            <Text style={[styles.balanceAmount, { color: colors.primaryText }]}>
-              {formatCurrency(account.balances.current)}
-            </Text>
+        <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
+          {/* Balance Card */}
+          <View style={[styles.balanceCard, { backgroundColor: colors.cardBackground }]}>
+            <View style={styles.balanceHeader}>
+              <Text style={[styles.balanceLabel, { color: colors.secondaryText }]}>Total Balance</Text>
+              <Text style={[styles.balanceAmount, { color: colors.primaryText }]}>
+                {formatCurrency(account.balances.current)}
+              </Text>
+            </View>
+            
+            <View style={styles.balanceStats}>
+              <View style={styles.statItem}>
+                <Text style={[styles.statLabel, { color: colors.secondaryText }]}>Income</Text>
+                <Text style={[styles.statValue, { color: '#10b981' }]}>
+                  +{formatCurrency(totalIncome)}
+                </Text>
+              </View>
+              <View style={styles.statDivider} />
+              <View style={styles.statItem}>
+                <Text style={[styles.statLabel, { color: colors.secondaryText }]}>Spending</Text>
+                <Text style={[styles.statValue, { color: '#ef4444' }]}>
+                  -{formatCurrency(totalSpending)}
+                </Text>
+              </View>
+            </View>
+            
             <TouchableOpacity 
-              style={[styles.chatButton, { backgroundColor: colors.tint }]}
+              style={[styles.aiAssistantButton, { backgroundColor: colors.tint }]}
               onPress={() => {
                 setShowChatModal(true);
-                // Clear chat when opening modal
                 setChatMessages([]);
                 setChatInput('');
               }}
             >
-              <Ionicons name="chatbubble-outline" size={28} color="#FFFFFF" />
+              <Ionicons name="sparkles-outline" size={20} color="#FFFFFF" />
+              <Text style={styles.aiAssistantText}>AI Assistant</Text>
             </TouchableOpacity>
           </View>
-          
-          <View style={styles.returnSection}>
-            <View style={styles.returnItem}>
-              <Text style={[styles.returnLabel, { color: colors.secondaryText }]}>TOTAL INCOME</Text>
-              <Text style={styles.returnValue}>
-                {formatCurrency(totalIncome)}
-              </Text>
-            </View>
-            <View style={styles.returnItem}>
-              <Text style={[styles.returnLabel, { color: colors.secondaryText }]}>TOTAL SPENDING</Text>
-              <Text style={[styles.spendingValue, { color: '#ef4444' }]}>
-                {formatCurrency(totalSpending)}
-              </Text>
+
+        {/* Analytics Cards */}
+        <View style={styles.analyticsContainer}>
+          <View style={styles.analyticsHeader}>
+            <Text style={[styles.analyticsTitle, { color: colors.primaryText }]}>Analytics</Text>
+            <View style={styles.cardIndicators}>
+              {cards.map((_, index) => (
+                <View
+                  key={index}
+                  style={[
+                    styles.cardIndicator,
+                    { backgroundColor: index === currentCardIndex ? colors.tint : colors.borderColor }
+                  ]}
+                />
+              ))}
             </View>
           </View>
-        </View>
-
-        {/* Swipeable Cards Section */}
-        <View style={styles.swipeableCardsContainer}>
+          
           <PanGestureHandler
             onGestureEvent={onGestureEvent}
             onHandlerStateChange={onHandlerStateChange}
           >
             <Animated.View
               style={[
-                styles.swipeableCard,
+                styles.analyticsCard,
                 {
                   transform: [{ translateX }],
                   opacity: cardOpacity,
@@ -853,22 +909,11 @@ INSTRUCTIONS:
             </Animated.View>
           </PanGestureHandler>
           
-          {/* Card Indicator */}
-          <View style={styles.cardIndicator}>
-            {cards.map((_, index) => (
-              <View
-                key={index}
-                style={[
-                  styles.indicatorDot,
-                  index === currentCardIndex && styles.indicatorDotActive,
-                ]}
-              />
-            ))}
-          </View>
+
         </View>
 
         {/* Transaction History Section */}
-        <View style={styles.transactionSection}>
+        <View style={[styles.transactionCard, { backgroundColor: colors.cardBackground }]}>
           <View style={styles.sectionHeader}>
             <Text style={[styles.sectionTitle, { color: colors.primaryText }]}>Recent Transactions</Text>
             <TouchableOpacity
@@ -883,7 +928,7 @@ INSTRUCTIONS:
           {latestTransactions.map((transaction, index) => (
             <View key={transaction.transaction_id} style={[styles.transactionItem, { borderBottomColor: colors.borderColor }]}>
               <View style={styles.transactionLeft}>
-                <View style={[styles.transactionIcon, { backgroundColor: colors.cardBackground }]}>
+                <View style={[styles.transactionIcon, { backgroundColor: colors.profileBackground }]}>
                   <Ionicons
                     name={getCategoryIcon(transaction.category) as any}
                     size={20}
@@ -1154,15 +1199,62 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   header: {
+    paddingHorizontal: 20,
+    paddingTop: 8,
+    paddingBottom: 16,
+  },
+  headerContent: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingHorizontal: 20,
-    paddingVertical: 16,
   },
-  headerLeft: {
+  headerCenter: {
+    flex: 1,
+    alignItems: 'flex-start',
+  },
+  headerTitle: {
+    fontSize: 18,
+    fontWeight: '600',
+    marginBottom: 8,
+    marginLeft: 12,
+  },
+  levelBarContainer: {
+    marginLeft: 12,
+    marginTop: 4,
+    width: 240,
+  },
+  levelInfo: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: 6,
+  },
+  levelText: {
+    fontSize: 12,
+    fontWeight: '500',
+  },
+  xpText: {
+    fontSize: 12,
+    fontWeight: '600',
+  },
+  progressBar: {
+    height: 6,
+    borderRadius: 3,
+    overflow: 'hidden',
+  },
+  progressFill: {
+    height: '100%',
+    borderRadius: 3,
+  },
+  headerSubtitle: {
+    fontSize: 14,
+    lineHeight: 18,
+    opacity: 0.7,
+  },
+  headerRight: {
     flexDirection: 'row',
     alignItems: 'center',
+    gap: 12,
   },
   avatarContainer: {
     width: 40,
@@ -1170,7 +1262,6 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     justifyContent: 'center',
     alignItems: 'center',
-    marginRight: 12,
     overflow: 'hidden',
   },
   avatar: {
@@ -1178,45 +1269,96 @@ const styles = StyleSheet.create({
     height: '100%',
     borderRadius: 20,
   },
-  accountName: {
-    color: '#ffffff',
-    fontSize: 16,
+  headerActionButton: {
+    padding: 8,
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexShrink: 0,
+  },
+  notificationBadge: {
+    position: 'absolute',
+    top: -2,
+    right: -2,
+    width: 18,
+    height: 18,
+    borderRadius: 9,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  notificationBadgeText: {
+    color: '#FFFFFF',
+    fontSize: 10,
     fontWeight: '600',
   },
-  accountMask: {
-    color: '#9ca3af',
-    fontSize: 14,
-  },
-  headerContent: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    width: '100%',
-  },
-
   scrollView: {
     flex: 1,
   },
-  balanceSection: {
-    padding: 20,
+  balanceCard: {
+    margin: 20,
+    marginBottom: 16,
+    borderRadius: 16,
+    padding: 24,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    elevation: 3,
   },
   balanceHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: 8,
+    marginBottom: 20,
   },
   balanceLabel: {
-    color: '#ffffff',
-    fontSize: 18,
+    fontSize: 14,
+    fontWeight: '500',
+    marginBottom: 8,
+  },
+  balanceAmount: {
+    fontSize: 36,
+    fontWeight: '700',
+    letterSpacing: -0.5,
+  },
+  balanceStats: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 24,
+  },
+  statItem: {
+    flex: 1,
+  },
+  statLabel: {
+    fontSize: 12,
+    fontWeight: '500',
+    marginBottom: 4,
+  },
+  statValue: {
+    fontSize: 16,
     fontWeight: '600',
   },
-  chatButton: {
-    width: 56,
-    height: 56,
-    borderRadius: 28,
-    justifyContent: 'center',
+  statDivider: {
+    width: 1,
+    height: 40,
+    backgroundColor: '#e5e7eb',
+    marginHorizontal: 16,
+  },
+  aiAssistantButton: {
+    flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+    borderRadius: 12,
+    gap: 8,
+  },
+  aiAssistantText: {
+    color: '#FFFFFF',
+    fontSize: 16,
+    fontWeight: '600',
   },
   balanceRow: {
     flexDirection: 'row',
@@ -1224,11 +1366,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 16,
   },
-  balanceAmount: {
-    color: '#ffffff',
-    fontSize: 32,
-    fontWeight: '700',
-  },
+
   addButton: {
     width: 48,
     height: 48,
@@ -1344,8 +1482,20 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     marginLeft: -20,
   },
-  transactionSection: {
+  transactionCard: {
     margin: 20,
+    marginTop: 0,
+    marginBottom: 16,
+    borderRadius: 16,
+    padding: 20,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    elevation: 3,
   },
   sectionHeader: {
     flexDirection: 'row',
@@ -1602,30 +1752,43 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#1f1f1f',
   },
-  swipeableCardsContainer: {
+  analyticsContainer: {
     margin: 20,
+    marginTop: 0,
     marginBottom: 20,
-    minHeight: 400,
   },
-  swipeableCard: {
-    borderRadius: 16,
-    padding: 20,
-    shadowColor: '#000000',
-    shadowOffset: {
-      width: 0,
-      height: 8,
-    },
-    shadowOpacity: 0.3,
-    shadowRadius: 16,
-    elevation: 8,
-  },
-  cardIndicator: {
+  analyticsHeader: {
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     alignItems: 'center',
-    marginTop: 20,
+    marginBottom: 16,
+  },
+  analyticsTitle: {
+    fontSize: 20,
+    fontWeight: '600',
+  },
+  cardIndicators: {
+    flexDirection: 'row',
     gap: 8,
   },
+  cardIndicator: {
+    width: 8,
+    height: 8,
+    borderRadius: 4,
+  },
+  analyticsCard: {
+    borderRadius: 16,
+    padding: 24,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    elevation: 3,
+  },
+
   indicatorDot: {
     width: 8,
     height: 8,
@@ -1696,8 +1859,60 @@ const styles = StyleSheet.create({
     shadowRadius: 8,
     elevation: 4,
   },
-
-
+  notificationItem: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: 16,
+    paddingHorizontal: 20,
+    borderBottomWidth: 1,
+    borderBottomColor: '#1f1f1f',
+  },
+  notificationLeft: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    flex: 1,
+    marginRight: 16,
+  },
+  notificationIcon: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 16,
+  },
+  notificationDetails: {
+    flex: 1,
+  },
+  notificationTitle: {
+    fontSize: 16,
+    fontWeight: '600',
+    marginBottom: 4,
+  },
+  notificationMessage: {
+    fontSize: 14,
+    fontWeight: '400',
+    marginBottom: 4,
+    lineHeight: 20,
+  },
+  notificationTime: {
+    fontSize: 12,
+    fontWeight: '400',
+  },
+  notificationAction: {
+    alignItems: 'flex-end',
+  },
+  actionButton: {
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    borderRadius: 20,
+  },
+  actionButtonText: {
+    color: '#FFFFFF',
+    fontSize: 14,
+    fontWeight: '600',
+  },
   modalCloseButton: {
     padding: 8,
   },
