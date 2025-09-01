@@ -7,7 +7,7 @@ Over a **third** of students in the UK have been targeted by fraud, scams and ph
 
 ## Core features:
 - An AI assistant that provides comprehensive review and guidance on the user's financial behaviour
-- A social media tab for university students to post about student discounts and scam encounters, potentially helping build a community of trust for students to inform others of potential scams within the area
+- A social media tab for university students to post about student discounts and scam encounters, potentially helping build a community of trust for students to inform others of potential scams within the area. Includes an AI analytics button that summarises the content of the post
 - A games tab that allows users to complete weekly and monthly challenges, as well as custom group challenges for students to complete together, encouraging social accountability to build towards better spending habits
 - An in-app points system that allows users to buy discounts from local shops, encouraging future enngagement with the app
 
