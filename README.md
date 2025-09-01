@@ -28,7 +28,12 @@ cd wif-mobile-app
 npm install
 ```
 
-3. Start development build:
+3. Create a .env file in the root folder that contains your OpenAI API key:
+```python3
+OPENAI_API_KEY = <your-openai-api-key>
+```
+
+4. Start development build:
 ```bash
 npx expo start
 ```
