@@ -14,7 +14,7 @@ Over a **third** of students in the UK have been targeted by fraud, scams and ph
 **Note**: This project is more so a proof-of-concept than a MVP, with only the points system, games and AI features being fully implemented.
 
 ## Preview:
-<img src="preview/preview_01.PNG" alt="Home Page" width="175"><img src="preview/preview_02.PNG" alt="AI Assistant Page" width="175"><img src="preview/preview_03.PNG" alt="Community Page" width="175"><img src="preview/preview_04.PNG" alt="Games & Challenges Page" width="175"><img src="preview/preview_05.PNG" alt="Shop Page" width="175">
+<img src="preview/preview_01.PNG" alt="Home Page" width="200"><img src="preview/preview_02.PNG" alt="AI Assistant Page" width="200"><img src="preview/preview_03.PNG" alt="Community Page" width="200"><img src="preview/preview_04.PNG" alt="Games & Challenges Page" width="200"><img src="preview/preview_05.PNG" alt="Shop Page" width="200">
 
 ## Installation:
 1. Clone the repository:  
